@@ -6,8 +6,6 @@ function User(id, name, surname, email, phone) {
     this.email = email;
     this.phone = phone;
 }
-let user = new User(1, 'vasia', 'sds', 'njnjn@jnjj', '+380665622456');
-
 
 let users = [
     new User(1, 'vasia', 'sds', 'njnjn@jnjj', '+380665622456'),
