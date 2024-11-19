@@ -20,6 +20,4 @@ let users = [
 ];
 console.log(users);
 
-console.log(users.sort((b, a) => {
-    return a.id - b.id
-}));
+console.log(users.sort((b, a) => a.id - b.id));

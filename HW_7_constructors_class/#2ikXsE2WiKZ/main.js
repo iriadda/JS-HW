@@ -25,7 +25,9 @@ console.log(users);
 //  });
 // console.log(filteredUsers);
 
-function filterFunction(user){
-    return(user.id % 2 === 0)
-};
-console.log(users.filter(filterFunction));
+// function filterFunction(user){
+//     return(user.id % 2 === 0)
+// };
+// console.log(users.filter(filterFunction));
+
+console.log(users.filter(user => user.id % 2));
