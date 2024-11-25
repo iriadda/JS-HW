@@ -1,4 +1,3 @@
-
 let wrapper = document.getElementById(`wrapper`);
 let prev = document.getElementById(`prev`);
 let next = document.getElementById(`next`);
@@ -14,46 +13,28 @@ for (let i = 0; i < 100; i++) {
     array.push(obj)
 }
 console.log(array);
+let counter = 0
+let limit = 10;
+next.addEventListener(`click`, function () {
+    wrapper.innerText = ' '
+    for (let i = counter; i < limit; i++) {
+        let div = document.createElement('div')
+        div.innerText = array[i].name;
+        wrapper.append(div)
+    }
+    counter += 10;
+    limit += 10;
+});
 
+prev.addEventListener(`click`, function () {
+    counter -= 10;
+    limit -= 10;
+    wrapper.innerText = ' '
+    for (let i = counter; i < limit; i++) {
+        let div = document.createElement('div')
+        div.innerText = array[i].name;
+        wrapper.append(div)
+    }
 
-let curPage = 1;
-const items = 10;
-
-function displayObj(page) {
-    wrapper.innerText = '';
-    let start = (page - 1) * items;
-    let end = start + items;
-    let pageObj = array.slice(start, end)
-
-    pageObj.forEach(obj => {
-        let div = document.createElement("div")
-            div.innerText = obj.name;
-            wrapper.append(div)
-    });
-
-   prev.disabled = (page === 1);
-    next.disabled = (end >= array.length);
-
-    prev.addEventListener('click', ()=>{
-        if (curPage > 1){
-            curPage--;
-            displayObj(curPage)
-        }
-    })
-    next.addEventListener('click', ()=>{
-        if (curPage * items <array.length){
-            curPage++;
-            displayObj(curPage)
-        }
-
-    })
-}
-
-displayObj(curPage);
-
-
-
-
-
-
+})
 
